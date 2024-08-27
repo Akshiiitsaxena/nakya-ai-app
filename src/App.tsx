@@ -4,12 +4,14 @@ import React from "react";
 
 function App() {
   return (
-    <div className="App">
+    <div className="bg-black mx-auto">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          testing vercel ci/cd<code>src/App.js</code> and save to reload.
-        </p>
+        <div className="bg-gray-100 p-6 font-bold underline">
+          <p>
+            testing vercel ci/cd<code>src/App.js</code> and save to reload.
+          </p>
+        </div>
         <a
           className="App-link"
           href="https://reactjs.org"
