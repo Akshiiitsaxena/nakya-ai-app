@@ -1,27 +1,25 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import Home from "./home/Home";
+import ProtectedRoute from "./home/ProtectedRouter";
+import Login from "./login/Login";
 
 function App() {
   return (
-    <div className="bg-black mx-auto">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <div className="bg-gray-100 p-6 font-bold underline">
-          <p>
-            testing vercel ci/cd<code>src/App.js</code> and save to reload.
-          </p>
-        </div>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        ></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
