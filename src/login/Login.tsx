@@ -21,14 +21,14 @@ const Login: React.FC = () => {
           <div className="text-white">Nakya</div>
           <div className="text-emerald-400 font-semibold">.ai</div>
         </div>
-        <div className="text-gray-500 font-spectral w-3/6 mt-7 text-xl">
+        <div className="text-gray-500 font-spectral w-4/6 mt-7 text-xl">
           Track, analyze, and optimize your research with predictive insights
           and comprehensive reports—streamlining your journey from data to
           discovery.
         </div>
       </div>
 
-      <div className="w-4/6 bg-gray-950 border border-gray-800 rounded-xl font-montserrat">
+      <div className="w-3/6 bg-gray-950 border border-gray-800 rounded-xl font-montserrat">
         <form className="space-y-6 py-6 px-6" onSubmit={handleSubmit}>
           <div className="text-gray-200 text-xl text-center font-bold">
             Login

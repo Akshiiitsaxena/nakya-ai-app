@@ -1,5 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
+import ScienceOutlinedIcon from "@mui/icons-material/ScienceOutlined";
+import AssessmentOutlinedIcon from "@mui/icons-material/AssessmentOutlined";
+import InsightsOutlinedIcon from "@mui/icons-material/InsightsOutlined";
+import HomeCard from "./HomeCard";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -10,26 +15,44 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
-      <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-light-blue-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
-        <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
-          <div className="max-w-md mx-auto">
-            <div className="divide-y divide-gray-200">
-              <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-                <p>Welcome to the Home page!</p>
-                <p>You are now logged in.</p>
-              </div>
-              <div className="pt-6 text-base leading-6 font-bold sm:text-lg sm:leading-7">
-                <button
-                  onClick={handleLogout}
-                  className="text-indigo-600 hover:text-indigo-500"
-                >
-                  Logout
-                </button>
-              </div>
-            </div>
+    <div>
+      <Header />
+      <div className="min-h-screen bg-neutral-950 py-6 flex-column space-y-12 px-12 sm:py-12">
+        <div className="flex-column">
+          <div className="font-spectral text-4xl flex">
+            <div className="text-gray-700 font-spectral">Welcome,</div>
+            <div className="text-gray-400 ml-2">Akshit</div>
           </div>
+          <div className="font-montserrat text-gray-400 mt-1 ml-1">
+            Click on any card to get started!
+          </div>
+        </div>
+        <div className="flex space-x-12 h-[calc(100vh/4)]">
+          <HomeCard
+            backgroundColor="bg-emerald-950"
+            textColor="text-emerald-400"
+            borderColor="border-emerald-900"
+            icon={<ScienceOutlinedIcon fontSize="large" />}
+            title="Create Experiment"
+            content="Kickstart your research—design and initiate your next experiment
+                with ease."
+          />
+          <HomeCard
+            backgroundColor="bg-amber-950"
+            textColor="text-amber-400"
+            borderColor="border-amber-600"
+            icon={<AssessmentOutlinedIcon fontSize="large" />}
+            title="Track Experiment"
+            content="Stay on top of your work—monitor and manage your experiments in real-time."
+          />
+          <HomeCard
+            backgroundColor="bg-indigo-950"
+            textColor="text-indigo-400"
+            borderColor="border-indigo-600"
+            icon={<InsightsOutlinedIcon fontSize="large" />}
+            title="Data Visualization"
+            content="Turn data into insights—visualize your findings with clarity and depth."
+          />
         </div>
       </div>
     </div>
